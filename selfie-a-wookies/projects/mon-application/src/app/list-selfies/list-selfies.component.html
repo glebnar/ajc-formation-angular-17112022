@@ -1,0 +1,15 @@
+<button (click)="deleteSelfie()">[ - ]</button>
+<button (click)="addSelfie()">[ + ]</button>
+
+<div>
+  <h3>Les filtres</h3>
+
+</div>
+
+<!-- <span *ngIf="! selfies || selfies.length === 0" class="empty"> -->
+<span *ngIf="isEmptyList" class="empty">
+  Aucun selfie disponible ! Où sont les Wookies ?!
+</span>
+
+<app-row-selfie *ngFor="let selfie of selfies"></app-row-selfie>
+
