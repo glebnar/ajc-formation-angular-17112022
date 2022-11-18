@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListSelfiesComponent } from './list-selfies/list-selfies.component';
 import { RowSelfieComponent } from './row-selfie/row-selfie.component';
+import { ListPlanetesComponent } from './list-planetes/list-planetes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListSelfiesComponent,
-    RowSelfieComponent
+    RowSelfieComponent,
+    ListPlanetesComponent
   ],
   imports: [
     BrowserModule,
