@@ -3,20 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListSelfiesComponent } from './list-selfies/list-selfies.component';
-import { RowSelfieComponent } from './row-selfie/row-selfie.component';
-import { ListPlanetesComponent } from './list-planetes/list-planetes.component';
+import { ListSelfiesComponent } from './features/selfie/list-selfies/list-selfies.component';
+import { RowSelfieComponent } from './features/selfie/row-selfie/row-selfie.component';
+import { ListPlanetesComponent } from './features/selfie/list-planetes/list-planetes.component';
+import { SelfieModule } from './features/selfie/selfie.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListSelfiesComponent,
-    RowSelfieComponent,
-    ListPlanetesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SelfieModule
   ],
   providers: [],
   bootstrap: [AppComponent]

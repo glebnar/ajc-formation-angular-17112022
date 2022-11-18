@@ -8,19 +8,26 @@ class Soleil {
 
 }
 
-/**
- * Je commente ma classe pour que ça soit super clair
- */
-export class Planete {
+export interface Planete {
   id: number;
   label: string;
+}
 
-  constructor(id: number, label: string) {
-    this.id = id;
-    this.label = label; // je sais pas donc j'explique
+/**
+ * Avant explication sur le typescript
+ * en vrai on a juste besoin du type =>  du contrat
+ */
+// export class Planete {
+//   id: number;
+//   label: string;
 
-    // this.
-  }
+//   constructor(id: number, label: string) {
+//     this.id = id;
+//     this.label = label; // je sais pas donc j'explique
+
+//     // this.
+//   }
+
 
   // /**
   //  *
@@ -42,4 +49,4 @@ export class Planete {
   // }
 
 
-}
+
