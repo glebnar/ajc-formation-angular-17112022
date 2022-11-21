@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Selfie } from '../models';
 
 @Component({
   selector: 'app-row-selfie',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./row-selfie.component.css']
 })
 export class RowSelfieComponent {
-
+ @Input() monSelfie !: Selfie;
 }

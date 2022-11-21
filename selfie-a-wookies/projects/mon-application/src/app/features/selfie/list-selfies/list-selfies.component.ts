@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Selfie } from '../models';
 
 @Component({
   selector: 'app-list-selfies',
@@ -7,14 +8,18 @@ import { Component } from '@angular/core';
 })
 export class ListSelfiesComponent {
   // selfies: string[] = ['', '', ''];
-  selfies =  ['', '', ''];
+  // selfies =  ['', '', '']; Avant 3 ° jrnée de formation
+  selfies: Selfie[] = [
+    { titre: 'Grorraaaa avec Vador', description: 'Il fait chaud à Mustafar', imageUrl: '' },
+    { titre: 'Avec Luku mon poto', description: 'Sur tatoooine', imageUrl: '' }
+  ];
 
   deleteSelfie(): void {
     this.selfies.pop();
   }
 
   addSelfie(): void {
-    this.selfies.push('');
+    this.selfies.push({ titre: 'Grorraaaa avec Vador', description: 'Il fait chaud à Mustafar', imageUrl: '' });
   }
 
   get isEmptyList(): boolean {

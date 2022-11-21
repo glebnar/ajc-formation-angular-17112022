@@ -3,12 +3,20 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+
+    "johny": "echo 'johny'",
+
+    "preoptic2000": "echo 'hey ah que ...'",
+    "optic2000": "npm run johny",
+    "postoptic2000": "echo 'ohh yeah'",
+
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
