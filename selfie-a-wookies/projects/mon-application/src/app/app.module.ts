@@ -7,6 +7,7 @@ import { ListSelfiesComponent } from './features/selfie/list-selfies/list-selfie
 import { RowSelfieComponent } from './features/selfie/row-selfie/row-selfie.component';
 import { ListPlanetesComponent } from './features/selfie/list-planetes/list-planetes.component';
 import { SelfieModule } from './features/selfie/selfie.module';
+import { WookieModule } from './features/wookie/wookie.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SelfieModule } from './features/selfie/selfie.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SelfieModule
+    SelfieModule,
+    WookieModule
   ],
   providers: [],
   bootstrap: [AppComponent]
