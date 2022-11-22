@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Planete } from '../../../models';
 import { Selfie } from '../models';
 
@@ -17,8 +17,13 @@ export class ListSelfiesComponent {
 
   planetes: Planete[] = [{ id: 4, label: 'Kashyyyk' },  { id: 1, label: 'Tatooine' }, { id: 2, label: 'Coruscant' }];
 
+  @Output() editerSelfie = new EventEmitter<Selfie>();
+
   preparerEditionSelfie(unSelfie: Selfie): void {
     console.info('On est prêt !!', unSelfie);
+
+    // Je veux informer mon parent
+    this.editerSelfie.emit(unSelfie);
   }
 
   deleteSelfie(): void {

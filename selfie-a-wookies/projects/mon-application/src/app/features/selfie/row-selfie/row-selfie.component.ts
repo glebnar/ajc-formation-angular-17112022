@@ -18,6 +18,10 @@ export class RowSelfieComponent implements OnInit {
   // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
   // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
   // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
- this.pourEdition.emit(this.monSelfie);
+ // this.pourEdition.emit(this.monSelfie);
+ }
+
+ clickToEditButton(): void {
+  this.pourEdition.emit(this.monSelfie);
  }
 }

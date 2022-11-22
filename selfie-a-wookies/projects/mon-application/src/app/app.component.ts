@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Selfie } from './features/selfie/models';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,9 @@ export class AppComponent {
 
   display(): void {
     console.info('Rorrraaa');
+  }
+
+  editSelfie(selfie: Selfie): void {
+    console.info('Ca y est on a reussi !', selfie);
   }
 }
