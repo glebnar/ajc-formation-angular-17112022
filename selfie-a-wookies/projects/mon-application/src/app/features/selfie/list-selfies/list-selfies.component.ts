@@ -17,6 +17,10 @@ export class ListSelfiesComponent {
 
   planetes: Planete[] = [{ id: 4, label: 'Kashyyyk' },  { id: 1, label: 'Tatooine' }, { id: 2, label: 'Coruscant' }];
 
+  preparerEditionSelfie(): void {
+    console.info('On est prêt !!');
+  }
+
   deleteSelfie(): void {
     this.selfies.pop();
   }

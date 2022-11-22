@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Selfie } from '../models';
 
 @Component({
@@ -6,8 +6,16 @@ import { Selfie } from '../models';
   templateUrl: './row-selfie.component.html',
   styleUrls: ['./row-selfie.component.css']
 })
-export class RowSelfieComponent {
- @Input() monSelfie !: Selfie;
+export class RowSelfieComponent implements OnInit {
 
+ @Input() monSelfie !: Selfie;
  @Input() titre = '';
+
+ @Output() pourEdition = new EventEmitter<Selfie>();
+
+ ngOnInit(): void {
+  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+ }
 }
