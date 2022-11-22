@@ -14,8 +14,10 @@ export class RowSelfieComponent implements OnInit {
  @Output() pourEdition = new EventEmitter<Selfie>();
 
  ngOnInit(): void {
-  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
-  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
-  this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+  /// Ici c'est pour comprendre le emit, on peut le faire, sans passer par un click de bouton
+  // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+  // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+  // this.pourEdition.emit({ description: '', imageUrl: '', titre: 'coucou' });
+ this.pourEdition.emit(this.monSelfie);
  }
 }

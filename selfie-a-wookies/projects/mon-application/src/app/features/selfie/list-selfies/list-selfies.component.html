@@ -16,7 +16,7 @@
 
 <app-row-selfie titre="Un selfie !"
                 [monSelfie]="selfie"
-                (pourEdition)="preparerEditionSelfie()"
+                (pourEdition)="preparerEditionSelfie($event)"
                 *ngFor="let selfie of selfies"></app-row-selfie>
 
 
