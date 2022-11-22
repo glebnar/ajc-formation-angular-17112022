@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Planete } from '../../../models';
 import { Selfie } from '../models';
 
 @Component({
@@ -13,6 +14,8 @@ export class ListSelfiesComponent {
     { titre: 'Grorraaaa avec Vador', description: 'Il fait chaud à Mustafar', imageUrl: '' },
     { titre: 'Avec Luku mon poto', description: 'Sur tatoooine', imageUrl: '' }
   ];
+
+  planetes: Planete[] = [{ id: 4, label: 'Kashyyyk' },  { id: 1, label: 'Tatooine' }, { id: 2, label: 'Coruscant' }];
 
   deleteSelfie(): void {
     this.selfies.pop();

@@ -3,7 +3,7 @@
 
 <div>
   <h3>Les filtres</h3>
-  <app-list-planetes></app-list-planetes>
+  <app-list-planetes [list]="planetes"></app-list-planetes>
 </div>
 
 <!-- <span *ngIf="! selfies || selfies.length === 0" class="empty"> -->
@@ -11,7 +11,8 @@
   Aucun selfie disponible ! Où sont les Wookies ?!
 </span>
 
-<app-row-selfie [monSelfie]="selfie" *ngFor="let selfie of selfies"></app-row-selfie>
+<app-row-selfie [titre]="'Un selfie'" [monSelfie]="selfie" *ngFor="let selfie of selfies"></app-row-selfie>
+<app-row-selfie titre="Un selfie !" [monSelfie]="selfie" *ngFor="let selfie of selfies"></app-row-selfie>
 
 
 <!-- <a href="http://devtobecurious.com">Les curieux-ses en dev</a> -->

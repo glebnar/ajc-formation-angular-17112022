@@ -8,4 +8,6 @@ import { Selfie } from '../models';
 })
 export class RowSelfieComponent {
  @Input() monSelfie !: Selfie;
+
+ @Input() titre = '';
 }
