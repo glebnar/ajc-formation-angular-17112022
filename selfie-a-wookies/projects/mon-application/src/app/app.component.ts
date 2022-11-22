@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Selfie } from './features/selfie/models';
+import { LoggerService } from './shared/tools/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,27 @@ export class AppComponent {
   title = 'Selfie à wookies';
   subTitle = 'Une appli Star Wars';
 
+  /**
+   *
+   */
+  constructor(private logger: LoggerService) {
+  }
+
+  // C'était avant typescript
+  // private _logger: LoggerService;
+  // constructor(logger: LoggerService) {
+  //   this._logger = logger;
+  // }
+
   display(): void {
-    console.info('Rorrraaa');
+    this.logger.log('Rorrraaa');
   }
 
   editSelfie(selfie: Selfie): void {
-    console.info('Ca y est on a reussi !', selfie);
+    // ce qui ne m'appartient pas, je ne l'instancie pas, je vais le récupérer
+    // depuis l'injection de dépendances
+
+    // const monLogger = new LoggerService();
+    this.logger.log('Ca y est on a reussi !' + selfie);
   }
 }
