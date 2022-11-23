@@ -10,17 +10,21 @@ import { SelfieModule } from './features/selfie/selfie.module';
 import { WookieModule } from './features/wookie/wookie.module';
 import { LoggerService } from './shared/tools/logger.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DiscoverObservablesDeuxComponent } from './shared/learning/discover-observables-deux/discover-observables-deux.component';
+import { DiscoverObservablesComponent } from './shared/learning/discover-observables/discover-observables.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DiscoverObservablesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SelfieModule,
-    WookieModule
+    WookieModule,
+    DiscoverObservablesDeuxComponent
   ],
   providers: [
     // LoggerService => c'est l'ancienne façon d'injecter en singleton
