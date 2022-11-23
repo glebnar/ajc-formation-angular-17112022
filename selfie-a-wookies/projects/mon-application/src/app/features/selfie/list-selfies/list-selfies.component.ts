@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Planete } from '../../../models';
 import { LoggerService } from '../../../shared/tools/logger.service';
 import { Selfie } from '../models';
@@ -9,7 +10,7 @@ import { SelfieService } from '../services/selfie.service';
   templateUrl: './list-selfies.component.html',
   styleUrls: ['./list-selfies.component.css']
 })
-export class ListSelfiesComponent implements OnInit {
+export class ListSelfiesComponent implements OnInit, OnDestroy {
   // selfies: string[] = ['', '', ''];
   // selfies =  ['', '', '']; Avant 3 ° jrnée de formation
   selfies: Selfie[] = [
@@ -18,15 +19,14 @@ export class ListSelfiesComponent implements OnInit {
   ];
 
   planetes: Planete[] = [{ id: 4, label: 'Kashyyyk' },  { id: 1, label: 'Tatooine' }, { id: 2, label: 'Coruscant' }];
-
   @Output() editerSelfie = new EventEmitter<Selfie>();
+  private subscription = new Subscription();
 
-
-  /**
-   *
-   */
   constructor(private logger: LoggerService,
               private selfieService: SelfieService) {
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -36,8 +36,10 @@ export class ListSelfiesComponent implements OnInit {
     const monRetour$ = this.selfieService.recupererTous();
 
     // Là, grâce à Subscribe, on appelle l'api et récupère les selfies
-    const retourApi = (selfiesRetour: Selfie[]) => this.selfies = selfiesRetour;
-    monRetour$.subscribe(retourApi);
+    const apresRetourApi = (selfiesRetour: Selfie[]) => this.selfies = selfiesRetour;
+    const subscriptionAMoi = monRetour$.subscribe(apresRetourApi);
+    this.subscription.add(subscriptionAMoi);
+
   }
 
 
