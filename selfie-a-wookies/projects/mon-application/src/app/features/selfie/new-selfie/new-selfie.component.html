@@ -1,1 +1,10 @@
-<p>new-selfie works!</p>
+<h1>Nouveau selfie</h1>
+
+{{ selfie | json }}
+
+<form>
+  <input type="text" name="titre" [(ngModel)]="selfie.titre">
+  <input type="text" name="description" [(ngModel)]="selfie.description">
+
+  <button (click)="save()">Valider</button>
+</form>

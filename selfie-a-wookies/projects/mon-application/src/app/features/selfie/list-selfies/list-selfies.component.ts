@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Planete } from '../../../models';
 import { LoggerService } from '../../../shared/tools/logger.service';
@@ -23,7 +24,8 @@ export class ListSelfiesComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();
 
   constructor(private logger: LoggerService,
-              private selfieService: SelfieService) {
+              private selfieService: SelfieService,
+              private route: ActivatedRoute) {
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
