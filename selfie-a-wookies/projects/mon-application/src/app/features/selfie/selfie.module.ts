@@ -5,6 +5,7 @@ import { TestUnComponent } from './test-un/test-un.component';
 import { ListSelfiesComponent } from './list-selfies/list-selfies.component';
 import { RowSelfieComponent } from './row-selfie/row-selfie.component';
 import { ListPlanetesComponent } from './list-planetes/list-planetes.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { ListPlanetesComponent } from './list-planetes/list-planetes.component';
     TestUnComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ListSelfiesComponent,
